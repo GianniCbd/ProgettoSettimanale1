@@ -142,9 +142,10 @@ public class AppRunner implements CommandLineRunner {
 //        }catch (Exception ex){
 //            System.err.println(ex.getMessage());
 //        }
-    }
 
 
-
+            System.out.println("********************FindByPartialName*********************************");
+		        utenteService.filterByPartialname("E").forEach(System.out::println);
+}
 }
 
