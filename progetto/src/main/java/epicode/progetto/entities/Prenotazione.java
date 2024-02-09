@@ -17,17 +17,13 @@ public class Prenotazione {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     @OneToOne
     @JoinColumn(name = "utente_id")
     private Utente utente;
-
     @OneToOne
     @JoinColumn(name = "location_id")
     private Location location;
-
     private LocalDate data;
-
     @Enumerated(EnumType.STRING)
     private StatoPrenotazione stato;
 

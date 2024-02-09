@@ -1,6 +1,7 @@
 package epicode.progetto;
 
 import epicode.progetto.DAO.*;
+import epicode.progetto.Enum.TipoLocation;
 import epicode.progetto.entities.Edificio;
 import epicode.progetto.entities.Location;
 import epicode.progetto.entities.Prenotazione;
@@ -146,6 +147,18 @@ public class AppRunner implements CommandLineRunner {
 
             System.out.println("********************FindByPartialName*********************************");
 		        utenteService.filterByPartialname("E").forEach(System.out::println);
-}
+
+
+        System.out.println("********************DispLocation*********************************");
+
+            locationService.trovaLocationDisponibili(TipoLocation.OPEN_SPACE, "Cagliari");
+
+
+
+
+
+
+
+    }
 }
 

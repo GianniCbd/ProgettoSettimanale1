@@ -19,5 +19,4 @@ public void saveEdificio(Edificio newEdificio){
     public Edificio findById(long edificioId) throws ItemNotFoundException {
         return edificioDAO.findById(edificioId).orElseThrow(() -> new ItemNotFoundException(edificioId));
     }
-
 }
