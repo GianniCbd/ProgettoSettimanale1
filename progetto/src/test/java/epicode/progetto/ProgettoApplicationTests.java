@@ -21,6 +21,12 @@ class ProgettoApplicationTests {
 	}
 
 
-
-
+	@Test
+	public void testFindUtenteById() {
+		Utente utente = new Utente("username", "name", "email");
+		utenteService.saveUtente(utente);
+		Utente foundUtente = utenteService.findById(utente.getId());
+		Assertions.assertNotNull(foundUtente);
+		Assertions.assertEquals(utente.getId(), foundUtente.getId());
+	}
 }
