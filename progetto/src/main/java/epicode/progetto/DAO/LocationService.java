@@ -21,8 +21,10 @@ public class LocationService {
         Location location = findById(locationId);
         return location.getStato() == StatoLocation.LIBERA;
     }
+
     public Location findById(long locationId) throws ItemNotFoundException {
         return locationDAO.findById(locationId).orElseThrow(() -> new ItemNotFoundException(locationId));
     }
+
 
 }

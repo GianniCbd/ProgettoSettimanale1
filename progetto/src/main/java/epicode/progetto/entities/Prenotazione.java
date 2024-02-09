@@ -1,5 +1,6 @@
 package epicode.progetto.entities;
 
+import epicode.progetto.Enum.StatoPrenotazione;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,19 +28,23 @@ public class Prenotazione {
 
     private LocalDate data;
 
+    @Enumerated(EnumType.STRING)
+    private StatoPrenotazione stato;
+
     public Prenotazione(Utente utente, Location location, LocalDate data) {
         this.utente = utente;
         this.location = location;
         this.data = data;
+        this.stato = StatoPrenotazione.RICHIESTA;
     }
 
     @Override
     public String toString() {
-        return "Prenotazione -> " +
+        return "Prenotazione{" +
                 "utente=" + utente +
                 ", location=" + location +
                 ", data=" + data +
+                ", stato=" + stato +
                 '}';
     }
-
 }

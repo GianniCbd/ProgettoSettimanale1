@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -30,15 +32,16 @@ public class Location {
     @JoinColumn(name = "edificio_id")
     private Edificio edificio;
 
-    @OneToOne(mappedBy = "location")
-    private Prenotazione prenotazione;
+    @OneToMany(mappedBy = "location")
+    private List<Prenotazione> prenotazioni;
 
-    public Location(Long codiceUnivoco, String descrizione, TipoLocation tipo, StatoLocation stato, int nMaxOccupanti) {
+    public Location(Long codiceUnivoco, String descrizione, TipoLocation tipo, StatoLocation stato, int nMaxOccupanti,Edificio edificio) {
         this.codiceUnivoco = codiceUnivoco;
         this.descrizione = descrizione;
         this.tipo = tipo;
         this.stato = stato;
         this.nMaxOccupanti = nMaxOccupanti;
+        this.edificio = edificio;
     }
 
     @Override
@@ -49,6 +52,7 @@ public class Location {
                 ", tipo=" + tipo +
                 ", stato=" + stato +
                 ", nMaxOccupanti=" + nMaxOccupanti +
+                ", edificio=" + edificio +
                 ' ';
     }
 }

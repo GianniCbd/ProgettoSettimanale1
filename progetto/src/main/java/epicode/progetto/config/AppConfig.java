@@ -42,15 +42,15 @@ public class AppConfig {
     @Bean(name = "locationUno")
     @Primary
     public Location postazioneUno(){
-        return new Location(faker().random().nextLong(20L),"Indimenticabile",TipoLocation.PRIVATO,StatoLocation.LIBERA,faker().random().nextInt(1,10));
+        return new Location(faker().random().nextLong(20L),"Indimenticabile",TipoLocation.PRIVATO,StatoLocation.LIBERA,faker().random().nextInt(1,10),attico());
     }
     @Bean(name = "locationDue")
     public Location postazioneDue(){
-        return new Location(faker().random().nextLong(20L),"Affare",TipoLocation.OPEN_SPACE,StatoLocation.LIBERA,faker().random().nextInt(1,10));
+        return new Location(faker().random().nextLong(20L),"Affare",TipoLocation.OPEN_SPACE,StatoLocation.LIBERA,faker().random().nextInt(1,10),mansarda());
     }
     @Bean(name = "locationTre")
     public Location postazioneTre(){
-        return new Location(faker().random().nextLong(20L),"JavaConvention",TipoLocation.OPEN_SPACE,StatoLocation.OCCUPATA,faker().random().nextInt(1,10));
+        return new Location(faker().random().nextLong(20L),"JavaConvention",TipoLocation.OPEN_SPACE,StatoLocation.OCCUPATA,faker().random().nextInt(1,10),hotel());
 
     }
 
@@ -84,4 +84,6 @@ public class AppConfig {
     public Edificio hotel() {
         return new Edificio("Hotel", "Via NicolaFabrizi", "Pescara");
     }
+
+
 }
