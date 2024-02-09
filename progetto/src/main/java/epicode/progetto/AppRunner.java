@@ -82,7 +82,7 @@ public class AppRunner implements CommandLineRunner {
         prenotazioneService.savePrenotazione(prenotazioneDue);
         prenotazioneService.savePrenotazione(prenotazioneTre);
 
-        System.out.println("********************FINDBYID*********************************");
+        System.out.println("**********************FINDBYID**********************************");
 
         try {
             Utente fromDB = utenteService.findById(10);
