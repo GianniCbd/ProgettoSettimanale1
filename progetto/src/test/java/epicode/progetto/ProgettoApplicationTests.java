@@ -14,7 +14,7 @@ class ProgettoApplicationTests {
 	private UtenteService utenteService;
 
 	@Test
-	public void testSaveUtente() {
+	public void testSalvaUtente() {
 		Utente utente = new Utente("username", "name", "email");
 		utenteService.saveUtente(utente);
 		Assertions.assertNotNull(utente.getId());
